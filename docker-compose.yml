@@ -1,0 +1,16 @@
+version: "2.1"
+
+services:
+  nextcloud:
+    image: nextcloud:23.0.1-apache
+    container_name: nextcloud-server-23
+    environment:
+      - TZ=Europe/Moscow
+    volumes:
+      - ./nextcloud/apps:/var/www/html/apps
+      - ./nextcloud/config:/var/www/html/config
+      - ./nextcloud/data:/var/www/html/data
+      # - ./nextcloud.ini:/usr/local/etc/php/conf.d/nextcloud.ini
+    ports:
+      - 80:80
+    restart: unless-stopped
