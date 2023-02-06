@@ -12,5 +12,6 @@ https://docs.docker.com/engine/install/ubuntu/
   sudo mkdir -p /app/nextcloud/nextcloud/{apps,config,data}  
   sudo chown -R $USER:$USER /app/nextcloud/  
   cd /app/nextcloud  
+  vim docker-compose.yml
   sudo docker-compose up -d  
   sudo docker-compose down  
