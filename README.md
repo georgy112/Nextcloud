@@ -3,7 +3,7 @@
 
 Компоненты:
 - Apache
-- SQLite
+- SQLite или PostgreSQL
 
 # Install Docker
   https://docs.docker.com/engine/install/ubuntu/  
