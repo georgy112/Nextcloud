@@ -7,6 +7,7 @@
 
 # Install Docker
 https://docs.docker.com/engine/install/ubuntu/
+sudo apt install -y docker-compose
 
 # Create directory
   sudo mkdir -p /app/nextcloud/nextcloud/{apps,config,data}  
