@@ -6,6 +6,7 @@
 - SQLite
 
 # Install Docker
+https://docs.docker.com/engine/install/ubuntu/
 
 # Create directory
   sudo mkdir -p /app/nextcloud/nextcloud/{apps,config,data}  
