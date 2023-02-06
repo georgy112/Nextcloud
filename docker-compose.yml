@@ -1,3 +1,4 @@
+##############  SQLite ###########
 version: "2.1"
 
 services:
@@ -14,3 +15,34 @@ services:
     ports:
       - 80:80
     restart: unless-stopped
+    
+############## Postgresql ############
+version: "2.1"
+
+services:
+  nextcloud:
+    image: nextcloud:23.0.1-apache
+    container_name: nextcloud-server-23
+    environment:
+      - TZ=Europe/Moscow
+    volumes:
+      - ./nextcloud/apps:/var/www/html/apps
+      - ./nextcloud/config:/var/www/html/config
+      - ./nextcloud/data:/var/www/html/data
+      # - ./nextcloud.ini:/usr/local/etc/php/conf.d/nextcloud.ini
+    ports:
+      - 80:80
+    restart: unless-stopped
+    depends_on:
+      - postgres-nextcloud
+
+  postgres-nextcloud:
+    image: postgres:14.1-alpine
+    container_name: postgres-nextcloud
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=nextcloud
+      - POSTGRES_USER=nextcloud
+      - POSTGRES_PASSWORD=NasjWUa0VF
+    volumes:
+      - ./DB:/var/lib/postgresql/data
