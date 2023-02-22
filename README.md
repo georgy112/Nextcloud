@@ -7,7 +7,7 @@
 
 # Install Docker
   https://docs.docker.com/engine/install/ubuntu/  
-  sudo apt install -y docker-compose
+  sudo apt install -y docker-compose  
   sudo systemctl start docker && sudo systemctl enable docker  
   sudo groupadd docker  
   sudo usermod -aG docker $USER  
